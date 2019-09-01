@@ -43,16 +43,10 @@ function detectDayBudget() {
 detectDayBudget();
 
 function chooseOptExpenses() {
-    for (let i = 0; i < 3; i++) {
-        let a = prompt("Введите статью необязательных расходов?", ''),
-            b = +prompt("Во сколько обойдется?", '');
-
-        if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null && !isNaN(b) && a != '' && b != '' && a.length < 50) {
-            console.log('yeah');
-            appData.optionalExpenses[a] = b;
-        } else {
-            i--;
-        }
+    for (let i = 1; i <= 3; i++) {
+        let questionOptExpenses = prompt("Статья необязательных расходов?");
+        appData.optionalExpenses[i] = questionOptExpenses;
+        console.log(appData.optionalExpenses);
     }
 }
 chooseOptExpenses();
